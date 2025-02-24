@@ -10,5 +10,8 @@
 #  department_id :integer
 #
 class Course < ApplicationRecord
-  has_many :enrollments, dependent: :destroy
+  belongs_to :department
+  has_many :enrollments
+  has_many :students, through: :enrollments
 end
+

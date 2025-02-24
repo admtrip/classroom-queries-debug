@@ -1,53 +1,43 @@
 class CoursesController < ApplicationController
   def index
-    @courses = Course.all.order({ :created_at => :desc })
-
-    render({ :template => "courses/index" })
+    @courses = Course.includes(:department)
+    render({ template: "course_templates/index" })
   end
 
   def show
-    the_id = params.fetch("path_id")
-    @course = Course.where({:id => the_id }).at(0)
-
-    render({ :template => "courses/show" })
+    @course = Course.find(params[:id])
+    @enrollments = @course.enrollments.includes(:student)
+    render({ template: "course_templates/show" })
   end
 
   def create
-    @course = Course.new
-    @course.title = params.fetch("query_title")
-    @course.term_offered = params.fetch("query_term_")
-    @course.department_id = params.fetch("query_department_id")
+    new_course = Course.new
+    new_course.title = params.fetch("query_title")
+    new_course.term_offered = params.fetch("query_term")
+    new_course.department_id = params.fetch("query_department_id")
 
-    if @course.valid?
-      @course.save
-      redirect_to("/courses", { :notice => "Course created successfully." })
+    if new_course.save
+      redirect_to("/courses")
     else
-      redirect_to("/courses", { :notice => "Course failed to create successfully." })
+      render({ template: "course_templates/index" })
     end
   end
 
   def update
-    id = params.fetch("path_id")
-    @course = Course.where({ :id => the_id }).at(0)
+    course = Course.find(params[:id])
+    course.title = params.fetch("query_title")
 
-    @course.title = params.fetch("query_title")
-    @course.term_offered = params.fetch("query_term_offered")
-    @course.department_id = params.fetch("query_department_id")
-
-    if @course.valid?
-      @course.save
-      redirect_to("/courses/#{@course.id}", { :notice => "Course updated successfully."} )
+    if course.save
+      redirect_to("/courses/#{course.id}")
     else
-      redirect_to("/courses/#{@course.id}", { :alert => "Course failed to update successfully." })
+      render({ template: "course_templates/show" })
     end
   end
 
   def destroy
-    the_id = params.fetch("path")
-    @course = Course.where({ :id => the_id }).at(0)
+    course = Course.find(params[:id])
+    course.destroy
 
-    @course.destroy
-
-    redirect_to("/courses", { :notice => "Course deleted successfully."} )
+    redirect_to("/courses")
   end
 end

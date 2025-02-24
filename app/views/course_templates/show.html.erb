@@ -1,0 +1,23 @@
+<h1><%= @course.title %></h1>
+
+<p><strong>Department:</strong> <a href="/departments/<%= @course.department.id %>"><%= @course.department.name %></a></p>
+<p><strong>Term:</strong> <%= @course.term_offered %></p>
+
+<h2>Enrollments</h2>
+<p>Number of enrolled students: <%= @enrollments.count %></p>
+
+<ul>
+  <% @enrollments.each do |enrollment| %>
+    <li><a href="/students/<%= enrollment.student.id %>"><%= enrollment.student.first_name %> <%= enrollment.student.last_name %></a></li>
+  <% end %>
+</ul>
+
+<h2>Update Course</h2>
+<form action="/update_course/<%= @course.id %>" method="post">
+  <label for="query_title">Title</label>
+  <input type="text" id="query_title" name="query_title" value="<%= @course.title %>" required>
+
+  <button type="submit">Update course</button>
+</form>
+
+<a href="/courses">Back to Courses</a>

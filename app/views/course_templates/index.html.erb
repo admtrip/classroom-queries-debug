@@ -1,0 +1,40 @@
+<h1>List of Courses</h1>
+
+<!-- Course Creation Form -->
+<form action="/insert_course" method="post">
+  <label for="query_title">Title</label>
+  <input type="text" id="query_title" name="query_title" required>
+
+  <label for="query_term">Term</label>
+  <input type="text" id="query_term" name="query_term" required>
+
+  <label for="query_department_id">Department</label>
+  <select id="query_department_id" name="query_department_id" required>
+    <% Department.all.each do |department| %>
+      <option value="<%= department.id %>"><%= department.name %></option>
+    <% end %>
+  </select>
+
+  <button type="submit">Create course</button>
+</form>
+
+<!-- List Courses -->
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Term</th>
+    <th>Department</th>
+    <th>Actions</th>
+  </tr>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.title %></td>
+      <td><%= course.term_offered %></td>
+      <td><a href="/departments/<%= course.department.id %>"><%= course.department.name %></a></td>
+      <td>
+        <a href="/courses/<%= course.id %>">Show details</a>
+        <a href="/delete_course/<%= course.id %>">❌ Delete</a>
+      </td>
+    </tr>
+  <% end %>
+</table>

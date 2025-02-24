@@ -1,0 +1,14 @@
+<h1><%= @department.name %></h1>
+
+<p><strong>Number of Courses:</strong> <%= @courses.count %></p>
+
+<h2>Courses</h2>
+<ul>
+  <% @courses.each do |course| %>
+    <li>
+      <a href="/courses/<%= course.id %>"><%= course.title %></a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/departments">Back to Departments</a>
