@@ -1,0 +1,53 @@
+* [33ma574089[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m 90 complete
+* [33m7127f30[m Update spec/ folder to latest version
+* [33mc79cc99[m update with project-syncing action
+* [33m26a3d1c[m update with project-syncing action
+* [33m5d6aef5[m update with project-syncing action
+* [33mc7c0e92[m update with project-syncing action
+* [33m1904ff2[m update with project-syncing action
+* [33mdc684ee[m update with project-syncing action
+* [33md2f0d66[m update with project-syncing action
+* [33m94dc6cf[m update with project-syncing action
+* [33m9fd7fd8[m update with project-syncing action
+* [33m664ceef[m update erd
+* [33mbfdd65c[m update with project-syncing action
+* [33m377e1ac[m update with project-syncing action
+* [33mbb9e9e3[m update with project-syncing action
+* [33mcdc5dd7[m update with project-syncing action
+* [33mdef79ba[m update with project-syncing action
+* [33mf0b173c[m update with project-syncing action
+* [33m39b0c5d[m update schema.rb
+* [33meb96523[m add erd
+* [33m1686343[m update with project-syncing action
+* [33mb106479[m update with project-syncing action
+* [33mff5235b[m update with project-syncing action
+* [33md901e50[m update with project-syncing action
+* [33m7682712[m update with project-syncing action
+* [33mf2ac981[m update with project-syncing action
+* [33m4cd7860[m update with project-syncing action
+* [33m02bf8e5[m update with project-syncing action
+* [33mcd67533[m update with project-syncing action
+* [33mf537aeb[m update with project-syncing action
+* [33m8d77219[m update with project-syncing action
+* [33mdd2d0ff[m update with project-syncing action
+* [33me2def5c[m reset pk on sample data
+* [33m16c8b7a[m update with project-syncing action
+* [33md5fc54e[m update with project-syncing action
+* [33mc236015[m update with project-syncing action
+* [33m8d6b96e[m update with project-syncing action
+* [33m0925458[m update with project-syncing action
+* [33m965fbe8[m update with project-syncing action
+* [33mb34f702[m update with project-syncing action
+* [33m5e0827d[m bump grade_runner version
+* [33m81f46da[m update vscode settings
+* [33m5c4c4a7[m update vscode settings
+* [33m61869e1[m update docker image
+* [33medbb0e1[m replace deprecated web_console config
+* [33m8df19f3[m add bin/server script
+* [33mf6d3909[m bundle update for grade_runner
+* [33mb529d3b[m fixed spec
+* [33m5c9d0ad[m Fix Gitpod permissions issue
+* [33mea3f4d4[m update gitpod.yml
+* [33me166666[m erb commenting extension
+* [33mb70a464[m update favicon
+* [33m412aad4[m first commit

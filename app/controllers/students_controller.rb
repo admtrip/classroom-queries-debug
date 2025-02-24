@@ -5,8 +5,8 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.includes(:courses).find(params[:id])
-    @enrolled_courses = @student.courses
+    @student = Student.find(params[:id])
+    @enrolled_courses = @student.enrollments.includes(:course)
     render({ template: "student_templates/show" })
   end
 end

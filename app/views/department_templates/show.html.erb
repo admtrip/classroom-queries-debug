@@ -1,6 +1,6 @@
 <h1><%= @department.name %></h1>
 
-<p><strong>Number of Courses:</strong> <%= @courses.count %></p>
+<p>Number of courses <%= @department.courses.count %></p>
 
 <h2>Courses</h2>
 <ul>
@@ -10,5 +10,3 @@
     </li>
   <% end %>
 </ul>
-
-<a href="/departments">Back to Departments</a>
